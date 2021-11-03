@@ -1,12 +1,18 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Homepage from "./Homepage";
+import { DataProvider } from "./DataContext";
+import { ProductProvider } from "./ProductContext";
+import Products from "./Products";
 
 function App() {
 	return (
 		<BrowserRouter>
 			<Switch>
-				<Route path="/" component={Homepage} exact />
+				<DataProvider>
+					<ProductProvider>
+						<Route path="/" component={Products} exact />
+					</ProductProvider>
+				</DataProvider>
 			</Switch>
 		</BrowserRouter>
 	);

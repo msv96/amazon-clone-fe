@@ -1,10 +1,109 @@
+:root {
+	--head-color: hsl(214, 27%, 10%);
+	--head-two: hsl(213, 28%, 19%);
+    --orng-clr: hsl(34, 99%, 70%);
+    --logo-url: url(https://images-eu.ssl-images-amazon.com/images/G/31/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936311_.png);
+}
 body {
 	margin: 0;
 	padding: 0;
-    box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-		"Helvetica Neue", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	font-family: "Lato", sans-serif;
+	background-color: hsl(180, 8%, 92%);
+}
+.text-white {
+    color: white;
+}
+.main-nav {
+    background-color: var(--head-color);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+.logo {
+    padding: 10px 6px;
+    float: none;
+    margin: 2px;
+}
+.logo:hover,
+.address:hover {
+    border: 1px solid white;
+    border-radius: 2px;
+}
+.nav {
+    background-image: var(--logo-url);
+    background-repeat: repeat-x;
+    float: left;
+    width: 97px;
+    height: 30px;
+    background-position: -10px -50px;
+}
+.in {
+    padding-top: 16px;
+    font-size: 14px;
+}
+.address {
+    width: 170px;
+    margin: 2px;
+}
+.loc {
+    float: left;
+    width: 15px;
+    height: 18px;
+    margin: 18px 2px 0px 2px;
+    background-position: -71px -378px;
+    background-image: var(--logo-url);
+}
+.hello{
+    font-size: 13px;
+    font-weight: 300;
+}
+.search-flex {
+    display: flex;
+}
+.select {
+    font-weight: 700;
+}
+#dropdown {
+    padding: 12px 10px;
+    border-radius: 4px 0px 0px 4px;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right: 1px solid lightgray;
+    background-color: hsl(0, 0%, 95%);
+}
+.inp {
+    width: 55vw;
+    min-width: 275px;
+    border: none;
+}
+.srch {
+    background-image: var(--logo-url);
+    background-position: 2px -280px;
+    float: left;
+    width: 45px;
+    background-color: var(--orng-clr);
+    border-radius: 0px 4px 4px 0px;
+}
+.signin {
+    margin: 0px 30px;
+    position: relative;
+}
+.count {
+    color: hsl(30, 100%, 60%);
+    font-weight: 700;
+    position: absolute;
+    top: -5px;
+    left: 18px;
+}
+.cart-icon {
+    height: 26px;
+    width: 38px;
+    float: left;
+    background-image: var(--logo-url);
+    background-position: -10px -340px;
+}
+.cart {
+    font-family: 700;
 }
