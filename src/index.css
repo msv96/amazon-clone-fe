@@ -1,7 +1,7 @@
 :root {
 	--head-color: hsl(214, 27%, 10%);
-	--head-two: hsl(213, 28%, 19%);
-	--orng-clr: hsl(34, 99%, 70%);
+	--orng-clr: hsl(34, 100%, 70%);
+	--yellow-clr: hsl(50, 100%, 50%);
 	--logo-url: url(https://images-eu.ssl-images-amazon.com/images/G/31/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936311_.png);
 }
 body {
@@ -108,6 +108,10 @@ body {
 .cart {
 	font-family: 700;
 }
+.link-1 {
+	text-decoration: none;
+	color: white;
+}
 .prod {
 	display: flex;
 	flex-flow: row wrap;
@@ -115,14 +119,15 @@ body {
 	justify-content: center;
 	align-items: center;
 	box-sizing: border-box;
-    margin: 20px 0px;
+	margin: 20px 0px;
 }
 .prod_list {
 	width: 280px;
 	height: 470px;
-    text-align: center;
+	text-align: center;
 }
-.prod_head {
+.prod_head,
+.cart_head {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
@@ -152,9 +157,10 @@ body {
 	align-items: center;
 	justify-items: start;
 	grid-gap: 5px;
-    margin: 20px 0px;
+	margin: 20px 0px;
 }
 .prod_btn {
+	cursor: pointer;
 	justify-self: center;
 	grid-column: span 2;
 	padding: 10px 40px;
@@ -168,17 +174,62 @@ body {
 	justify-self: end;
 }
 .prod_mrp_1 {
-    text-decoration: line-through;
-    font-size: 12px;
+	text-decoration: line-through;
+	font-size: 12px;
 }
 .prod_price_1 {
-    color: hsl(0, 50%, 50%);
-    font-size: 18px;
+	color: hsl(0, 50%, 50%);
+	font-size: 18px;
 }
 .link {
-    text-decoration: none;
-    color: black;
-    background-color: var(--orng-clr);
-    border-radius: 5px;
-    padding: 10px 20px;
+	border: none;
+	background-color: var(--orng-clr);
+	border-radius: 5px;
+	padding: 10px 20px;
+	width: 76px;
+}
+.empty {
+	text-align: center;
+}
+.cart-main {
+	min-width: 600px;
+	width: 55%;
+	margin: 0% auto;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	gap: 20px;
+}
+.cart_list {
+	display: grid;
+	grid-template-areas:
+		"a b b"
+		"a c d";
+	align-items: center;
+	justify-items: center;
+	grid-gap: 10px;
+	max-width: 800px;
+	align-self: flex-start;
+}
+.cart_img {
+	grid-area: a;
+	width: 120px;
+}
+.cart_head {
+	grid-area: b;
+}
+.cart_rate {
+	grid-area: c;
+}
+.cart_qty {
+	grid-area: d;
+}
+.cart_btn,
+.link-4 {
+	cursor: pointer;
+	border: none;
+	background-color: var(--yellow-clr);
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px;
 }

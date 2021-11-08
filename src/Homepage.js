@@ -35,13 +35,13 @@ function Homepage() {
 				<br />
 				<span className="select">&amp; Orders</span>
 			</div>
-			<Link to="/cart">
-				<div className="signin text-white">
+			<div className="signin text-white">
+				<Link to="/cart" className="link-1">
 					<span className="count">{context.Data.length}</span>
 					<span className="cart-icon"></span>
 					<span className="cart">Cart</span>
-				</div>
-			</Link>
+				</Link>
+			</div>
 		</header>
 	);
 }

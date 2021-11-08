@@ -25,11 +25,18 @@ function Products() {
 		}
 	};
 	return (
-		<div className="prod">
-			{data.map((el) => (
-				<Oneproduct key={el._id} data={el} handleCart={handleCart} />
-			))}
-		</div>
+		<>
+			<h2 className="empty">Product List</h2>
+			<div className="prod">
+				{data.map((el) => (
+					<Oneproduct
+						key={el._id}
+						data={el}
+						handleCart={handleCart}
+					/>
+				))}
+			</div>
+		</>
 	);
 }
 
