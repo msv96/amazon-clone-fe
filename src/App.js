@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Cart from "./Cart";
 import { DataProvider } from "./DataContext";
-import { ProductProvider } from "./ProductContext";
+import Homepage from "./Homepage";
 import Products from "./Products";
 
 function App() {
@@ -9,9 +10,9 @@ function App() {
 		<BrowserRouter>
 			<Switch>
 				<DataProvider>
-					<ProductProvider>
-						<Route path="/" component={Products} exact />
-					</ProductProvider>
+                    <Homepage />
+					<Route path="/" component={Products} exact />
+                    <Route path="/cart" component={Cart} exact/>
 				</DataProvider>
 			</Switch>
 		</BrowserRouter>
