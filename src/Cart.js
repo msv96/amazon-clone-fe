@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
+import Cartproduct from "./components/Cartproduct";
 import DataContext from "./DataContext";
 
 function Cart() {
@@ -21,77 +22,48 @@ function Cart() {
 		context.setData([...context.Data]);
 	};
 	return (
-		<>
+		<div className="cart-main">
+			<h2>Shopping Cart</h2>
 			{context.Data.length === 0 ? (
 				<div className="empty">
-					<h2>Your Cart is Empty</h2>
+					<h3>Your Cart is Empty</h3>
 					<button
 						type="submit"
-						className="link"
+						className="link-4"
 						onClick={() => history.push("/")}
 					>
-						Home
+						Continue Shopping
 					</button>
 				</div>
 			) : (
-				<div className="cart-main">
-					<h2>Shopping Cart</h2>
-					<h2>
-						Total: ₹{" "}
-						{context.Data.map((e) => e.qty * e.price).reduce(
-							(a, b) => a + b
-						)}
+				<>
+					<div>
+						<span className="header">
+							Total: ₹{" "}
+							{context.Data.map((e) => e.qty * e.price).reduce(
+								(a, b) => a + b
+							)}
+						</span>
 						<button
 							type="submit"
-							className="link-4"
-							onClick={() => history.push("/")}
+							className="link-5"
+							onClick={() => history.push("/order")}
 						>
 							Place Order
 						</button>
-					</h2>
+					</div>
 					{context.Data.map((e) => (
-						<div className="cart_list" key={e._id}>
-							<img
-								src={e.img}
-								alt={e.head}
-								className="cart_img"
-							/>
-							<div className="cart_head">{e.head}</div>
-							<div className="cart_rate">
-								<h3>Price: ₹ {e.price}</h3>
-								<button
-									type="submit"
-									className="cart_btn"
-									onClick={() => handleRemove(e._id)}
-								>
-									Remove item
-								</button>
-							</div>
-							<div className="cart_qty">
-								Quantity:
-								<button
-									type="submit"
-									className="cart_btn"
-									onClick={() => handleMinus(e._id)}
-									disabled={e.qty < 2}
-								>
-									-
-								</button>
-								{e.qty}
-								<button
-									type="submit"
-									className="cart_btn"
-									onClick={() => handlePlus(e._id)}
-								>
-									+
-								</button>
-								<h3> Sub-total: ₹ {e.qty * e.price}</h3>
-							</div>
-						</div>
+						<Cartproduct
+							key={e._id}
+							e={e}
+							handlePlus={handlePlus}
+							handleMinus={handleMinus}
+							handleRemove={handleRemove}
+						/>
 					))}
-				</div>
+				</>
 			)}
-		</>
+		</div>
 	);
 }
 

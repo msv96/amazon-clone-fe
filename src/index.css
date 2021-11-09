@@ -1,6 +1,6 @@
 :root {
 	--head-color: hsl(214, 27%, 10%);
-	--orng-clr: hsl(34, 100%, 70%);
+	--orng-clr: hsl(35, 100%, 70%);
 	--yellow-clr: hsl(50, 100%, 50%);
 	--logo-url: url(https://images-eu.ssl-images-amazon.com/images/G/31/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936311_.png);
 }
@@ -115,7 +115,7 @@ body {
 .prod {
 	display: flex;
 	flex-flow: row wrap;
-	grid-gap: 20px;
+	gap: 20px;
 	justify-content: center;
 	align-items: center;
 	box-sizing: border-box;
@@ -156,7 +156,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	justify-items: start;
-	grid-gap: 5px;
+	gap: 5px;
 	margin: 20px 0px;
 }
 .prod_btn {
@@ -191,6 +191,10 @@ body {
 .empty {
 	text-align: center;
 }
+.header {
+	font-weight: 600;
+	font-size: 1.3em;
+}
 .cart-main {
 	min-width: 600px;
 	width: 55%;
@@ -202,27 +206,27 @@ body {
 }
 .cart_list {
 	display: grid;
-	grid-template-areas:
-		"a b b"
-		"a c d";
+	grid-template-columns: 110px 200px 200px 200px;
+	grid-template-rows: 80px 120px;
 	align-items: center;
 	justify-items: center;
-	grid-gap: 10px;
+	gap: 10px 30px;
 	max-width: 800px;
 	align-self: flex-start;
+	justify-items: start;
 }
 .cart_img {
-	grid-area: a;
-	width: 120px;
+	width: 110px;
+	grid-row: 1 / -1;
 }
 .cart_head {
-	grid-area: b;
+	grid-column: 2 / -1;
 }
 .cart_rate {
-	grid-area: c;
+	grid-column: 2 / 3;
 }
 .cart_qty {
-	grid-area: d;
+	grid-column: 3 / 4;
 }
 .cart_btn,
 .link-4 {
@@ -232,4 +236,58 @@ body {
 	border-radius: 5px;
 	padding: 10px;
 	margin: 10px;
+}
+.link-5 {
+	cursor: pointer;
+	border: 2px solid var(--yellow-clr);
+	background-color: white;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px;
+}
+.link-5:hover {
+	background-color: var(--yellow-clr);
+}
+.order {
+	width: 50%;
+	margin: 20px auto;
+	display: grid;
+	grid-template-columns: 150px 250px;
+	gap: 30px;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+}
+.label {
+	justify-self: end;
+}
+.input2 {
+	justify-self: start;
+	width: 200px;
+	padding: 5px;
+	border: none;
+	border-bottom: 1px solid black;
+}
+.input2:focus {
+	outline: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0;
+}
+.red {
+	color: red;
+}
+.shipping {
+	grid-column: 1 / -1;
+}
+.confirm {
+	grid-column: 1 / -1;
+	background-color: var(--yellow-clr);
+	border: none;
+	border-radius: 10px;
+	padding: 10px 20px;
 }

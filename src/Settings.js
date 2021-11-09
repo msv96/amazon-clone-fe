@@ -1,5 +1,5 @@
 const Settings = {
-		api: "http://localhost:3000/",
+	api: "https://amazon-cline.herokuapp.com",
 };
 
 export default Settings;

@@ -9,8 +9,12 @@ function Products() {
 	const [data, setData] = useState([]);
 	useEffect(() => {
 		let fetch = async () => {
-			let api = await axios.get(`${env.api}`);
-			setData([...api.data]);
+			try {
+				let api = await axios.get(`${env.api}/`);
+				setData([...api.data]);
+			} catch (error) {
+				console.log(error);
+			}
 		};
 		fetch();
 	}, []);
