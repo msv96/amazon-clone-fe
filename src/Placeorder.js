@@ -10,27 +10,29 @@ function Placeorder() {
 	const [city, setCity] = useState("");
 	const [pincode, setPincode] = useState("");
 	const history = useHistory();
-	const context = useContext(DataContext);
+	const { Data, setData } = useContext(DataContext);
 	let handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
 			let api = await axios.post(`${env.api}/orders`, {
+				Data,
 				name,
 				address,
 				city,
 				pincode,
-				items: context.Data,
 			});
 			if (api.data.code) {
 				setName("");
 				setAddress("");
 				setCity("");
 				setPincode("");
-				context.setData([]);
-                history.push('/')
+				setData([]);
+				history.push("/");
 			} else {
-                alert('Order could not be placed right now. Please try again after sometime.')
-            }
+				alert(
+					"Order could not be placed right now. Please try again after sometime."
+				);
+			}
 		} catch (error) {
 			console.log(error);
 		}

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import DataContext from "../DataContext";
 
 function Oneproduct({ data, handleCart }) {
+	const { Data } = useContext(DataContext);
 	return (
 		<div className="prod_list">
 			<div className="prod_img_div">
@@ -21,8 +23,13 @@ function Oneproduct({ data, handleCart }) {
 					type="submit"
 					className="prod_btn"
 					onClick={() => handleCart(data._id)}
+					disabled={
+						data.qty < 1 || Data.some((e) => e._id === data._id)
+					}
 				>
-					Add to Cart
+					{data.qty < 1 || Data.some((e) => e.userqty === data.qty)
+						? "Out of Stock"
+						: "Add to Cart"}
 				</button>
 			</div>
 		</div>
