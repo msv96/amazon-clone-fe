@@ -285,6 +285,7 @@ input[type="number"]::-webkit-outer-spin-button {
 	grid-column: 1 / -1;
 }
 .confirm {
+  cursor: pointer;
 	grid-column: 1 / -1;
 	background-color: var(--yellow-clr);
 	border: none;

@@ -10,7 +10,7 @@ function Products() {
 	useEffect(() => {
 		let fetch = async () => {
 			try {
-				let api = await axios.get(`${env.api}/`);
+				let api = await axios.get(`${env.api}/products`);
 				setDatas([...api.data]);
 			} catch (error) {
 				console.log(error);

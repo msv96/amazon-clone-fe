@@ -53,6 +53,13 @@ function Cart() {
 						>
 							Place Order
 						</button>
+						<button
+							type="submit"
+							className="link-4"
+							onClick={() => history.push("/")}
+						>
+							Back
+						</button>
 					</div>
 					{Data.map((e) => (
 						<Cartproduct
